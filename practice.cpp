@@ -70,3 +70,65 @@ int main() {
    std::cout << "You do not have a fever. 🕺";
   }
 }
+
+// Levels and Ranks 💎
+#include <iostream>
+
+int main() {
+  // Write code here
+  int levels;
+  std::cout << "What is your current level? ";
+  std::cin >> levels;
+
+  if (levels < 6) {
+    std::cout << "🥉 Bronze\n";
+  }
+  else if (levels < 11) {
+    std::cout << "🥈 Silver\n";
+  }
+  else if (levels < 16) {
+    std::cout << "🥇 Gold\n";
+  }
+  else if (levels < 21) {
+    std::cout << "🏅 Platinum\n";
+  }
+  else {
+    std::cout << "💎 Diamond\n";
+  }
+}
+
+// Fortune Cookie 🥠
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+
+int main() {
+  // Write code here
+  srand(time(NULL)); //To make sure every time you run the program, you get a new random number,
+
+  int fortune = std::rand() % 50; //Generates a random number that's either 0-49
+
+  std::cout <<"Your Number is: " << fortune << "\n";
+  if (fortune = 10){
+    std::cout << "Don't pursue happiness – create it.";
+  }
+  else if(fortune = 23){
+    std::cout << "All things are difficult before they are easy.";
+  }
+  else if(fortune = 45){
+    std::cout << "The early bird gets the worm, but the second mouse gets the cheese.";
+  }
+  else if(fortune = 0){
+    std::cout << "Someone in your life needs a letter from you.";
+  }
+  else if(fortune = 31){
+    std::cout << "The fortune you search for is in another cookie.";
+  }
+  else if(fortune = 12){
+    std::cout << "Help! I'm being held prisoner in a Chinese bakery!";
+  }
+  else{
+    std::cout << "🥠 The fortune you search for is in another cookie. ";
+  }
+}
+
