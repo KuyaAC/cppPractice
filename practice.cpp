@@ -33,3 +33,40 @@ int main() {
 
   std::cout << "Your cat is " << humanYears << " years old in human years.\n";
 }
+
+// Coin Flip 🪙
+
+#include <iostream>
+#include <cstdlib> //include funct rand w/c for generating random numbers
+
+int main() {
+  srand(time(NULL)); //Seeds the random number generator with the current time.
+
+  int num = std::rand() % 2;  // Generates a random number that's either 0 or 1
+
+  if (num > 0.5) { 
+    std::cout << "Heads\n";
+  }
+  else { 
+    std::cout << "Tails\n";
+  }
+}
+
+
+// Fever 🤒
+#include <iostream>
+
+int main() {
+  // Write code here
+  int temp;
+  std::cout << "What is you temperature:";
+  std::cin >> temp;
+
+  //conditional statement in C++
+  if (temp >= 100){
+   std::cout << "You have a fever. 🤒";
+  }
+  else {
+   std::cout << "You do not have a fever. 🕺";
+  }
+}
