@@ -132,3 +132,37 @@ int main() {
   }
 }
 
+// Voting 🗳️
+#include <iostream>
+
+int main() {
+  // Write code here
+  int age;
+  bool citizen;
+  bool registered;
+
+  std::cout << "How Old are you? ";
+  std::cin >> age;
+  std::cout << "Are you a PH Citizen? ";
+  std::cin >> citizen;
+  std::cout << "Are you registered? ";
+  std::cin >> registered;
+
+  if (age >= 18 and citizen == true and registered == true) {
+    std::cout << "You can vote!";
+  }
+ else if (age < 18) {
+    std::cout << "You are not old enough to vote.\n";
+  }
+  else if (citizen == false) {
+    std::cout << "You are not eligible to vote.\n";
+  }
+  else if (registered == false) {
+    std::cout << "You need to register first.\n";
+  }
+  else {
+    std::cout << "You have not met the requirements.\n";
+  }
+  
+}
+
