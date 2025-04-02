@@ -21,5 +21,11 @@ SELECT *
 FROM shows 
 WHERE genre LIKE '%com%';
 
+-- Between is like a range
+SELECT * FROM shows
+WHERE year 
+BETWEEN 1999 AND 2024;
+
+
 
 
