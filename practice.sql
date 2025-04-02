@@ -26,6 +26,11 @@ SELECT * FROM shows
 WHERE year 
 BETWEEN 1999 AND 2024;
 
+-- ORDER by ASCENDING OR DESCENDING ORDER
+SELECT name, genre, stream, tomatometer
+FROM shows
+ORDER BY tomatometer DESC;
+
 
 
 
