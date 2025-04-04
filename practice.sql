@@ -48,6 +48,11 @@ ORDER BY tomatometer DESC;
 -- SUM(): returns the total sum in a column.
 -- AVG(): returns the average value in a column.
 
+-- SAMPLE:
+SELECT COUNT(*) FROM playlist; 
+-- It output number of rows in the table
+
+
 
 
 
