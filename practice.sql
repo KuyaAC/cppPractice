@@ -63,4 +63,10 @@ SELECT AVG(duration) FROM playlist;
 -- Using the average function
 
 
+-- AGGREGATION + GROUP BY:
+SELECT artist, AVG(plays) 
+-- Make a 2 column ouput
+FROM playlist
+GROUP BY artist;
+
 
