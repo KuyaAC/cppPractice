@@ -52,7 +52,15 @@ ORDER BY tomatometer DESC;
 SELECT COUNT(*) FROM playlist; 
 -- It output number of rows in the table
 
+SELECT title, artist, MAX(year) FROM playlist;
+-- output upmost number of year (MAX)
 
+SELECT SUM(duration)
+FROM playlist;
+-- sum the total duration in the playlist
+
+SELECT AVG(duration) FROM playlist;
+-- Using the average function
 
 
 
