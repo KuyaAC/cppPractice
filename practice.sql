@@ -81,4 +81,14 @@ SELECT genre, AVG(metascore)
 FROM games
 GROUP BY genre;
 
+-- Create a Table
+CREATE TABLE companies (
+  id INTEGER,
+  name TEXT,
+  headquarters TEXT,
+  year INTEGER
+);
+
+
+
 
