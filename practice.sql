@@ -102,4 +102,56 @@ VALUES (3, 'BeReal', 'Paris 🇫🇷', 2020);
 INSERT INTO companies (id, name, headquarters, year)
 VALUES (4, 'Codedex', 'New York 🗽', 2022);
 
+-- Alter Table Command (edit the table)🕸️
+ALTER TABLE companies
+ADD COLUMN website TEXT;
 
+-- Update Set (update specific part in the tables) 🔄
+UPDATE companies
+SET website = 'x.com'
+WHERE id = 1;
+
+UPDATE companies
+SET website = 'duolingo.com'
+WHERE id = 2;
+
+UPDATE companies
+SET website = 'bereal.com'
+WHERE id = 3;
+
+UPDATE companies
+SET website = 'codedex.io'
+WHERE id = 4;
+
+SELECT *
+FROM companies;
+
+-- Delete From ➖
+DELETE FROM companies
+WHERE name = 'BeReal';
+
+-- SAMPLE creation of tables and adding some values:
+CREATE TABLE bffs (
+  name TEXT,
+  birthday TEXT,
+  location TEXT,
+  note TEXT
+);
+
+INSERT INTO bffs (name, birthday, location, note)
+VALUES ('Ilana', '1987-04-12', 'Gowanus', 'free-spirited NYU grad, owes me $20');
+
+INSERT INTO bffs (name, birthday, location, note)
+VALUES ('Abbi', '1984-02-01', 'Astoria', 'aspiring illustrator, custodian at Solustice');
+
+INSERT INTO bffs (name, birthday, location, note)
+VALUES ('Trey', '1982-11-21', 'East Village', 'Soulstice trainer');
+
+INSERT INTO bffs (name, birthday, location, note)
+VALUES ('Jaimé', '1985-11-26', 'Gowanus', 'Ilana roommate');
+
+INSERT INTO bffs (name, birthday, location, note)
+VALUES ('Lincoln', '1983-02-04', 'Williamsburg', 'Dentist, easygoing');
+
+SELECT * 
+FROM bffs;
