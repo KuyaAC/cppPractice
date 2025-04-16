@@ -73,5 +73,23 @@ public class HelloWorld {
 // scanner.nextInt()
 
 
+// Convert coin value Challenge:
+
+import java.util.Scanner;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Write your code here 💖
+        double coinValue = 0.0045;
+        
+
+        System.out.print("How Many Club Coin you have? ");
+        Scanner scanner = new Scanner(System.in);
+        double toConvert = scanner.nextDouble(); //for double
+        double convertedValue = (toConvert * coinValue);
+
+        System.out.println("Your Coin Value is: $" + convertedValue);
+    }
+}
 
 
