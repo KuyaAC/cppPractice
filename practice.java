@@ -52,5 +52,26 @@ public class HelloWorld {
     }
 }
 
+//User Input
+import java.util.Scanner;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        
+        System.out.print("Enter your name: ");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine(); //for string
+
+        System.out.println("Your Name is " + name);
+        
+    }
+}
+
+// Other options:
+// scanner.nextDouble()
+// scanner.nextBoolean()
+// scanner.nextInt()
+
+
 
 
