@@ -37,3 +37,20 @@ public class HelloWorld {
     }
 }
 
+
+// Arithmetic Operations
+public class HelloWorld {
+    public static void main(String[] args) {
+        double chemicalA = 20.0;
+        double chemicalB = 6.0;
+
+        //fomula: A+B/AB
+        double reactionResult = ((chemicalA + chemicalB)/(chemicalA * chemicalB));
+        
+        System.out.println(reactionResult);
+        
+    }
+}
+
+
+
