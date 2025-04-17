@@ -120,5 +120,25 @@ public class HelloWorld {
     }
 }
 
+//else if
+public class HelloWorld {
+    public static void main(String[] args) {
+        boolean isCatOwner = false;
+        boolean isDogOwner = true;
+
+        if (isCatOwner == true){
+            System.out.println("20% off selected cat items with code MEOW2025");
+        }
+        else if (isDogOwner == true){
+            System.out.println("20% off selected cat items with code WOOF2025");
+        }
+        else{
+            System.out.println("Welcome to the Pets Pets Store!");
+        }
+        
+    }
+}
+
+
 
 
