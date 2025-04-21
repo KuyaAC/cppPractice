@@ -224,5 +224,25 @@ public class HelloWorld {
     }
 }
 
+// For Loop format:
+for (let i = initialValue; condition; updateIterator) {
+    // Code here
+}
+
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Write your code here 💖
+        int num = 1;
+
+        for (int i = 0; i < 50; i++){
+          System.out.println("I will be a great programmer!" + num);
+          num++;
+        }
+
+        
+    }
+}
+
 
 
