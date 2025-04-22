@@ -244,5 +244,55 @@ public class HelloWorld {
     }
 }
 
+//More for loop codes:
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Write your code here 💖
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Num = " + i);
+        if (i % 2 == 0 && i % 3 == 0) {
+            System.out.println("Break Num at " + i);
+            break; // Exit the loop
+    }
+}
+
+
+        
+    }
+}
+
+
+//Create a program using numbers 1 through 52 so we account for all 52 cards in a standard deck. 
+// Card 32 is from another deck! Break the program if the deck reaches 32, and print “An incorrect card was found in item 32.”
+
+// While loop:
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Write your code here 💖
+        int i = 1;
+
+        while (i != 32){
+            System.out.println("Card: " + i);
+            i++;
+        }
+        System.out.println("An incorrect card was found in item " + i + ".");
+    }
+}
+
+// For Loop:
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Write your code here 💖
+        for (int i = 1; i <= 52; i++) {
+            if (i == 32) {
+                System.out.println("An incorrect card was found in item " + i);
+                break;
+            } else {
+                System.out.println("Card " + i);
+            }
+        }
+    }
+}
+
 
 
