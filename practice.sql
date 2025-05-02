@@ -155,3 +155,28 @@ VALUES ('Lincoln', '1983-02-04', 'Williamsburg', 'Dentist, easygoing');
 
 SELECT * 
 FROM bffs;
+
+
+-- Table creation:
+CREATE TABLE celebs (
+   id INTEGER, 
+   name TEXT, 
+   age INTEGER
+);
+
+-- Adding rows:
+INSERT INTO celebs (id, name, age) 
+VALUES (1, 'Justin Bieber', 29); 
+
+INSERT INTO celebs (id, name, age) 
+VALUES (2, 'Beyonce Knowles', 42); 
+
+INSERT INTO celebs (id, name, age) 
+VALUES (3, 'Jeremy Lin', 35); 
+
+INSERT INTO celebs (id, name, age) 
+VALUES (4, 'Taylor Swift', 33); 
+
+-- The ALTER TABLE statement adds a new column to a table:
+ALTER TABLE celebs
+ADD COLUMN twitter_handle TEXT;
