@@ -180,3 +180,32 @@ VALUES (4, 'Taylor Swift', 33);
 -- The ALTER TABLE statement adds a new column to a table:
 ALTER TABLE celebs
 ADD COLUMN twitter_handle TEXT;
+
+
+-- UPDATE:
+UPDATE celebs 
+SET twitter_handle = '@taylorswift13' 
+WHERE id = 4; 
+
+SELECT * FROM celebs;
+
+-- DELETE:
+DELETE FROM celebs 
+WHERE twitter_handle IS NULL;
+
+
+-- with CONSTRAINTS:
+CREATE TABLE awards (
+   id INTEGER PRIMARY KEY,
+   recipient TEXT NOT NULL,
+   award_name TEXT DEFAULT 'Grammy'
+);
+
+-- NOTES:
+Preview: Docs Loading link description CREATE TABLE creates a new table.
+Preview: Docs Loading link description INSERT INTO adds a new row to a table.
+Preview: Docs Every SQL query will begin with the SELECT command to fetch data from one or more tables. SELECT queries data from a table.
+Preview: Docs Adds, deletes, modifies or changes the data type of a column in a table. ALTER TABLE changes an existing table.
+Preview: Docs Loading link description UPDATE
+ edits a row in a table.
+Preview: Docs Loading link description DELETE FROM deletes rows from a table.
