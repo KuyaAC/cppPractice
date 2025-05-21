@@ -27,6 +27,11 @@ Spelling ERROR
 Syntax ERROR
 Keyword ERROR
 
+-- Best practice: Capetalize the KEYWORDS, Use newline for better readability, and use semi-colon to end the query.
+SELECT person_id, role 
+FROM roles 
+LIMIT 10;
+
 
 
 
