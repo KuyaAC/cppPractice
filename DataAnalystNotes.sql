@@ -59,6 +59,51 @@ SELECT COUNT(language) AS count_spanish
 FROM films
 WHERE language = 'Spanish';
 
+-- MULTIPLE CRITERIA (OR, AND, BETWEEN)
+-- OR operator need to satisfy either of the criteria
+SELECT title 
+FROM films
+WHERE release_year = 1994
+    OR release_year = 2000;
+-- The output is films release
+
+-- AND operator need to satisfy all the criteria
+SELECT title 
+FROM films
+WHERE release_year >= 1994
+    AND release_year <= 2000;
+-- Can also be using BETWEEN, AND
+SELECT title
+FROM films
+WHERE release_year
+    BETWEEN 1994 AND 2000;
+-- The ouput is film releas between 1994 and 2000
+
+-- AND and OR combination
+SELECT title
+FROM films
+WHERE (release_year = 1994 OR release_year = 1995)
+    AND (certification = 'PG' OR certification = 'R');
+-- Filter films released in 1994 or 1995, and certified PG or R
+
+-- ACT:
+-- Select the title and release_year for all German-language films released before 2000
+SELECT title, release_year
+FROM films
+WHERE language = 'German'
+    AND release_year <= 2000;
+
+-- Select all records for German-language films released after 2000 and before 2010
+SELECT * 
+FROM films
+WHERE (language = 'German')
+    AND (release_year > 2000 AND release_year < 2010);
+
+
+
+
+
+
 
 
 
