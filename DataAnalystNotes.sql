@@ -22,6 +22,13 @@ FROM films;
 SELECT COUNT(DISTINCT country) AS count_distinct_countries
 FROM films;
 
+-- BASIC COMMON ERROR
+Spelling ERROR
+Syntax ERROR
+Keyword ERROR
+
+
+
 
 
 
