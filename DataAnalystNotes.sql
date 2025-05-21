@@ -32,6 +32,33 @@ SELECT person_id, role
 FROM roles 
 LIMIT 10;
 
+-- NOTE: If the column name is with space like (facebook like) you can call the column using "facebook like"(quotation)
+
+
+-- Filtering queries: (using WHERE and comparison oeprators) '<>' is not equal to operator
+SELECT title
+FROM films
+WHERE release_year < 1960;
+
+SELECT film_id, imdb_score
+FROM reviews 
+WHERE imdb_score > 7.0;
+
+SELECT film_id, facebook_likes
+FROM reviews
+WHERE facebook_likes < 1000
+LIMIT 10;
+
+-- Count the records with at least 100,000 votes
+SELECT COUNT(num_votes) AS films_over_100K_votes
+FROM reviews
+WHERE num_votes >= 100000;
+
+-- Count the Spanish-language films
+SELECT COUNT(language) AS count_spanish
+FROM films
+WHERE language = 'Spanish';
+
 
 
 
