@@ -305,7 +305,7 @@ FROM films;
 SELECT (gross - budget) AS profit
 FROM films;
 
--- ORDER OF EXECUTION: FROM > WHERE > SELECT > LIMIT
+-- ORDER OF EXECUTION: FROM > WHERE > SELECT > ORDER BY > LIMIT
 
 -- Calculate the title and duration_hours from films
 SELECT title, (duration/60.0) AS duration_hours
@@ -329,6 +329,27 @@ FROM films
 ORDER BY budget ASC; 
 -- ASC = ascending order
 -- DESC = descending order
+
+
+-- SAMPLE:
+SELECT title, budget
+FROM films
+WHERE budget IS NOT NULL
+ORDER BY budget DESC;
+
+SELECT title, wins, imdb_score
+FROM best_movies
+ORDER BY wins DESC, imdb_score DESC;
+
+-- Select name from people and sort alphabetically
+SELECT name 
+FROM people
+ORDER BY name ASC;
+
+-- Select the title and duration from longest to shortest film
+SELECT title, duration
+FROM films
+ORDER BY duration DESC;
 
 
 
