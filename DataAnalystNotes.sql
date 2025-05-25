@@ -228,6 +228,15 @@ WHERE (release_year
 -- Narrow it down to G, PG, and PG-13 certifications
 	AND certification IN ('G', 'PG', 'PG-13');
 
+-- ACT: (NULL)
+
+-- List all film titles with missing budgets
+SELECT title AS no_budget_info
+FROM films
+WHERE budget IS NULL;
+
+
+
 
 
 
