@@ -240,7 +240,30 @@ SELECT COUNT(language) AS count_language_known
 FROM films
 WHERE language IS NOT NULL;
 
+-- AGGREGATE FUNCTIONS: AVG, SUM, MIN, MAX, COUNT
 
+-- MIN <-> MAX (Non-numerical Data)
+-- Lowest <-> Highest
+-- A <-> Z
+-- 1600 <-> 2025 (DATE)
+-- 0 <-> 100
+
+-- ACT: (AGGREGATE FUNCTION)
+-- Query the sum of film durations
+SELECT SUM(duration) AS total_duration
+FROM films;
+
+-- Query the sum of film durations
+SELECT SUM(duration) AS total_duration
+FROM films;
+
+-- Find the latest release_year
+SELECT MAX(release_year) AS latest_year
+FROM films;
+
+-- Find the duration of the shortest film
+SELECT MIN(duration) AS shortest_film
+FROm films;
 
 
 
