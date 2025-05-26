@@ -377,6 +377,11 @@ SELECT release_year, country, MAX(budget) AS max_budget
 FROM films
 GROUP BY release_year, country;
 
+-- Find release year most unique language films
+SELECT release_year, COUNT(DISTINCT(language)) AS unique_lang_no
+FROM films
+GROUP BY release_year;
+
 
 
 
