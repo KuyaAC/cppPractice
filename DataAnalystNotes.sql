@@ -383,12 +383,46 @@ FROM films
 GROUP BY release_year;
 
 -- HAVING: This query shows only yeas in which more than ten films were released.
+-- WHERE filters individual records while HAVING filters grouped records.
 SELECT 
     release_year,
     COUNT(title) AS title_count
 FROM films
 GROUP BY release_year
 HAVING COUNT(title) > 10;
+
+-- In what years was the average film furation over two hours?
+SELECT release_year
+FROM films
+GROUP BY release_year
+HAVING AVG(duration) > 120;
+
+-- Select the country and distinct count of certification as certification_count
+SELECT country, COUNT(DISTINCT(certification)) AS certification_count
+FROM films
+-- Group by country
+GROUP BY country
+-- Filter results to countries with more than 10 different certifications
+HAVING COUNT(DISTINCT(certification)) > 10;
+
+-- Select the country and average_budget from films
+SELECT country, AVG(budget) AS average_budget
+FROM films
+-- Group by country
+GROUP BY country
+-- Filter to countries with an average_budget of more than one billion
+HAVING AVG(budget) > 1000000000
+-- Order by descending order of the aggregated budget
+ORDER BY average_budget DESC;
+
+-- Select the release_year for films released after 1990 grouped by year
+SELECT release_year 
+FROM films
+GROUP BY release_year
+HAVING release_year > 1990;
+
+
+
 
 
 
