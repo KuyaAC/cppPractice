@@ -382,6 +382,16 @@ SELECT release_year, COUNT(DISTINCT(language)) AS unique_lang_no
 FROM films
 GROUP BY release_year;
 
+-- HAVING: This query shows only yeas in which more than ten films were released.
+SELECT 
+    release_year,
+    COUNT(title) AS title_count
+FROM films
+GROUP BY release_year
+HAVING COUNT(title) > 10;
+
+
+
 
 
 
