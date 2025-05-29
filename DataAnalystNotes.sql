@@ -443,6 +443,28 @@ HAVING AVG(budget) > 60000000
 ORDER BY avg_gross DESC
 LIMIT 1;
 
+-- INNER JOINS:
+SELECT column_names
+FROM table1
+INNER JOIN table2
+ON table1.common_field = table2.common_field;
+
+-- Select fields with aliases
+SELECT c.code AS country_code, name, year, inflation_rate
+FROM countries AS c
+-- Join to economies (alias e)
+INNER JOIN economies AS e
+-- Match on code field using table aliases
+ON c.code = e.code;
+
+SELECT c.name AS country, l.name AS language, official
+FROM countries AS c
+INNER JOIN languages AS l
+-- Match using the code column
+USING(code);
+
+
+
 
 
 
