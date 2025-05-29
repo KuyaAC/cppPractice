@@ -463,6 +463,58 @@ INNER JOIN languages AS l
 -- Match using the code column
 USING(code);
 
+-- ACT:
+-- Select country and language names (aliased)
+SELECT c.name AS country, l.name AS language
+-- From countries (aliased)
+FROM countries AS c
+-- Join to languages (aliased)
+INNER JOIN languages AS l
+-- Use code as the joining field with the USING keyword
+USING(code);
+
+
+-- Select country and language name (aliased)
+SELECT c.name AS country, l.name AS language
+-- From countries (aliased)
+FROM countries AS c
+-- Join to languages (aliased)
+INNER JOIN languages AS l
+-- Use code as the joining field with the USING keyword
+USING(code)
+-- Filter for the Bhojpuri language
+WHERE l.name = 'Bhojpuri';
+
+-- CHAINING JOINS
+SELECT 
+    p1.country,
+    p1.continent,
+    president,
+    prime_minister,
+    pm_start
+FROM prime_minister as p1
+INNER JOIN presidents as p2
+USING(country)
+INNER JOIN prime_minister_terms as p3
+USING(prime_minister);
+
+
+-- Select relevant fields
+SELECT c.name, p.fertility_rate
+-- Inner join countries and populations, aliased, on code
+FROM countries AS c
+INNER JOIN populations AS p
+ON c.code = p.country_code;
+
+-- Select fields
+SELECT name, e.year, fertility_rate, e.unemployment_rate
+FROM countries AS c
+INNER JOIN populations AS p
+ON c.code = p.country_code
+-- Join to economies (as e)
+INNER JOIN economies AS e
+-- Match on country code
+USING(code);
 
 
 
