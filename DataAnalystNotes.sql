@@ -590,6 +590,75 @@ ORDER BY avg_gdp DESC
 LIMIT 10;
 
 
+-- Modify this query to use RIGHT JOIN instead of LEFT JOIN
+SELECT countries.name AS country, languages.name AS language, percent
+FROM languages
+RIGHT JOIN countries
+USING(code)
+ORDER BY language;
+
+-- NOTES:
+-- INNER JOINS:
+-- Only the matching rows from both tables.
+-- Use case: When you only want records that exist in both tables.
+
+-- LEFT JOINS: (or right)
+-- Returns: All rows from the left table, and matching rows from the right table. 
+-- If no match, right side is NULL.
+-- Use case: When you want everything from the left table, even if there's no match in the right.
+
+-- FULL JOINS:
+-- Returns: All rows from both tables. If there's no match, missing side gets NULL.
+-- Use case: When you want everything, regardless of matches.
+
+-- FULL JOINS ACT:
+SELECT name AS country, code, region, basic_unit
+FROM countries
+-- Join to currencies
+FULL JOIN currencies
+USING (code)
+-- Where region is North America or name is null
+WHERE region = 'North America' 
+    OR region IS NULL
+ORDER BY region;
+
+
+SELECT name AS country, code, region, basic_unit
+FROM countries
+-- Join to currencies
+LEFT JOIN currencies
+USING (code)
+WHERE region = 'North America' 
+	OR name IS NULL
+ORDER BY region;
+
+
+SELECT name AS country, code, region, basic_unit
+FROM countries
+-- Join to currencies
+INNER JOIN currencies
+USING (code)
+WHERE region = 'North America' 
+	OR name IS NULL
+ORDER BY region;
+
+SELECT 
+	c1.name AS country, 
+    region, 
+    l.name AS language,
+	basic_unit, 
+    frac_unit
+FROM countries as c1 
+-- Full join with languages (alias as l)
+FULL JOIN languages AS l
+USING(code)
+-- Full join with currencies (alias as c2)
+FULL JOIN currencies AS c2
+USING(code)
+WHERE region LIKE 'M%esia';
+
+
+
 
 
 
