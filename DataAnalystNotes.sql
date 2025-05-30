@@ -525,6 +525,29 @@ ON c.code = e.code
 -- Add an additional joining condition such that you are also joining on year
 		AND p.year = e.year;
 
+-- LEFT & RIGHT JOIN
+SELECT p1.country, prime_minister, president
+FROM prime_minister AS p1
+LEFT JOIN president AS p2
+USING(country);
+
+SELECT p1.country, prime_minister, president
+FROM prime_minister AS p1
+RIGHT JOIN president AS p2
+USING(country);
+
+SELECT 
+    c1.name AS city,
+    code,
+    c2.name AS country,
+    region,
+    city_proper_pop
+FROM cities AS c1
+-- Perform an inner join with cities as c1 and countries as c2 on country code
+INNER JOIN countries AS c2
+ON c1.country_code = c2.code
+ORDER BY code DESC;
+
 
 
 
