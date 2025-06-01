@@ -657,6 +657,43 @@ FULL JOIN currencies AS c2
 USING(code)
 WHERE region LIKE 'M%esia';
 
+-- CROSS JOINS:
+SELECT prime_minister, president
+FROM prime_minister AS p1
+CROSS JOIN presidents AS p2
+WHERE p1.continent IN ('Asia')
+    AND p2.continent IN ('South America');
+
+SELECT c.name AS country, l.name AS language
+-- Inner join countries as c with languages as l on code
+FROM countries AS c 
+INNER JOIN languages AS l
+USING(code)
+WHERE c.code IN ('PAK','IND')
+	AND l.code in ('PAK','IND');
+
+SELECT c.name AS country, l.name AS language
+FROM countries AS c        
+-- Perform a cross join to languages (alias as l)
+CROSS JOIN languages AS l
+WHERE c.code in ('PAK','IND')
+	AND l.code in ('PAK','IND');
+
+SELECT 
+	c.name AS country,
+    region,
+    life_expectancy AS life_exp
+FROM countries AS c
+-- Join to populations (alias as p) using an appropriate join
+INNER JOIN populations AS p
+ON c.code = p.country_code
+-- Filter for only results in the year 2010
+WHERE year = 2010
+-- Sort by life_exp
+ORDER BY life_expectancy ASC
+-- Limit to five records
+LIMIT 5;
+
 
 
 
