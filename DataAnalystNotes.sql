@@ -733,6 +733,21 @@ WHERE p1.year = 2010
 -- Filter such that p1.year is always five years before p2.year
     AND p2. year = (p1.year + 5)
 
+-- SEt theory for SQL joins
+-- UNION: (stack field on one another
+SELECT * 
+FROM left_table
+UNION
+SELECT * 
+FROM right_table;
+
+-- UNION ALL
+SELECT * 
+FROM left_table
+UNION ALL 
+SELECT * 
+FROM right_table;
+
 
 
 
