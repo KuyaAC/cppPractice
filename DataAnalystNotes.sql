@@ -802,6 +802,23 @@ INTERSECT
 SELECT name
 FROM countries;
 
+-- EXCEPT: Identify records present in one table, but not the other. Only contains record form the left table that are not present in the right table.
+-- Syntax:
+SELECT monarch, country
+FROM monarchs
+EXCEPT
+SELECT prime_minister, country
+FROM prime_minister;
+
+-- ACT:
+-- Return all cities that do not have the same name as a country
+SELECT name
+FROM cities
+EXCEPT
+SELECT name
+FROM countries
+ORDER BY name;
+
 
 
 
