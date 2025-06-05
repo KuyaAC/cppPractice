@@ -787,6 +787,23 @@ SELECT country_code, year
 FROM populations
 ORDER BY code, year;
 
+-- INTERSECT: Common in both table
+-- Syntax:
+SELECT *
+FROM left_table
+INTERSECT
+SELECT *
+FROM right_table
+
+-- Return all cities with the same name as a country
+SELECT name
+FROM cities
+INTERSECT
+SELECT name
+FROM countries;
+
+
+
 
 
 
