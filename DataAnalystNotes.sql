@@ -714,6 +714,8 @@ ON p1.continent = p2.continent
     AND p1.country <> p2.country
 LIMIT 10;
 
+-- NOT EQUAL OPERATOR: '<>'
+
 -- ACT:
 -- Select aliased fields from populations as p1
 SELECT p1.country_code, p1.size AS size2010, p2.size AS size2015
@@ -734,19 +736,41 @@ WHERE p1.year = 2010
     AND p2. year = (p1.year + 5)
 
 -- SEt theory for SQL joins
--- UNION: (stack field on one another
+-- UNION: (stack field on one another) disregard the duplicates
 SELECT * 
 FROM left_table
 UNION
 SELECT * 
 FROM right_table;
 
--- UNION ALL
+-- UNION ALL (include all duplicates)
 SELECT * 
 FROM left_table
 UNION ALL 
 SELECT * 
 FROM right_table;
+
+
+SELECT monarch AS leader, country
+FROM monarchs
+UNION 
+SELECT prime_minister, country
+FROM prime_ministers
+ORDER BY country, leader
+LIMIT 10;
+
+
+-- ACT(union):
+-- Select all fields from economies2015
+SELECT *
+FROM economies2015
+-- Set operation
+UNION
+-- Select all fields from economies2019
+SELECT * 
+FROM economies2019
+ORDER BY code, year;
+
 
 
 
