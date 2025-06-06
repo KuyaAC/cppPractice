@@ -819,6 +819,24 @@ SELECT name
 FROM countries
 ORDER BY name;
 
+-- Semi Join:(Chooses record in the 1st Table where a condition is met in the 2nd table.)
+SELECT president, country, continent
+FROM presidents
+WHERE country IN 
+    (SELECT country
+    FROM states
+    WHERE indep_year < 1800);
+
+-- Anti Join: (Chooses records in the first table where col1 does not find a match in col2)
+SELECT president, country, continent
+FROM presidents
+WHERE continent LIKE '%America'
+    AND country NOT IN 
+    (SELECT country
+    FROM states
+    WHERE indep_year < 1800);
+
+-- ACT
 
 
 
