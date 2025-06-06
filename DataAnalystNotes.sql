@@ -867,6 +867,40 @@ WHERE continent = 'Oceania'
     (SELECT code
     FROM currencies);
 
+-- Subqueries:
+SELECT DISTINCT continet,
+    (SELECT COUNT(*)
+    FROM monarchs
+    WHERE states.continent = monarch.continent) AS monarch_count
+FROM states;
+
+-- ACT:
+-- Select average life_expectancy from the populations table
+SELECT AVG(life_expectancy)
+FROM populations
+-- Filter for the year 2015
+WHERE year = 2015;
+
+SELECT *
+FROM populations
+WHERE year = 2015
+-- Filter for only those populations where life expectancy is 1.15 times higher than average
+  AND life_expectancy > 1.15 *
+  (SELECT AVG(life_expectancy)
+   FROM populations
+   WHERE year = 2015);
+
+-- Select relevant fields from cities table
+SELECT name, country_code, urbanarea_pop
+FROM cities
+-- Filter using a subquery on the countries table (Return the name, country_code and urbanarea_pop for all capital cities (not aliased).)
+WHERE name IN
+    (SELECT capital
+    FROM countries)
+ORDER BY urbanarea_pop DESC;
+
+
+
 
 
 
