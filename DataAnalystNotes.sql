@@ -836,8 +836,36 @@ WHERE continent LIKE '%America'
     FROM states
     WHERE indep_year < 1800);
 
--- ACT
+-- ACT:
+-- Select country code for countries in the Middle East
+SELECT code
+FROM countries
+WHERE region = 'Middle East';
 
+-- Select unique language names
+SELECT DISTINCT(name)
+FROM languages
+-- Order by the name of the language
+ORDER BY name ASC;
+
+-- Semi Join
+SELECT DISTINCT name
+FROM languages
+-- Add syntax to use bracketed subquery below as a filter
+WHERE code IN
+    (SELECT code
+    FROM countries
+    WHERE region = 'Middle East')
+ORDER BY name;
+
+-- Anti Join
+SELECT code, name
+FROM countries
+WHERE continent = 'Oceania'
+-- Filter for countries not included in the bracketed subquery
+  AND code NOT IN
+    (SELECT code
+    FROM currencies);
 
 
 
