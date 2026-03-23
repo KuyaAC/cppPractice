@@ -899,6 +899,34 @@ WHERE name IN
     FROM countries)
 ORDER BY urbanarea_pop DESC;
 
+-- SAME OUTPUT WITH DIFFERENT APPROACH:
+-- LEFT JOIN APPROACH:
+-- Find top nine countries with the most cities
+SELECT countries.name AS country, COUNT(cities.country_code) AS cities_num
+FROM countries
+LEFT JOIN cities
+ON countries.code = cities.country_code
+-- Order by count of cities as cities_num
+GROUP BY countries.name
+ORDER BY cities_num DESC, country ASC
+-- Limit the results
+LIMIT 9;
+
+-- Subquery APPROACH:
+SELECT countries.name AS country,
+-- Subquery that provides the count of cities   
+  (SELECT COUNT(country_code)
+   FROM cities
+   WHERE countries.code = cities.country_code) AS cities_num
+FROM countries
+ORDER BY cities_num DESC, country
+LIMIT 9;
+
+-- Subqueries inside FROM
+SELECT left_table.id, left_val
+FROM left_table, right_table
+WHERE left_table.id = right_table.id
+
 
 
 
